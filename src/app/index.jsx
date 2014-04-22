@@ -1,11 +1,16 @@
 /** @jsx React.DOM */
 
-var React = require('react');
+var React = require('react'),
+    Sidebar = require('root/Sidebar/views/Sidebar'),
+    Agenda = require('root/Agenda/views/Agenda');
 
 var Index = React.createClass({
   render: function () {
     return (
-      <div className="index">Hack, it!</div>
+      <div>
+        <Sidebar />
+        <Agenda/>
+      </div>
     );
   }
 });
