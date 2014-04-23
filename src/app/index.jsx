@@ -7,9 +7,11 @@ var React = require('react'),
 var Index = React.createClass({
   render: function () {
     return (
-      <div>
-        <Sidebar />
-        <Agenda/>
+      <div className="container">
+        <div className="row-fluid">
+          <Sidebar />
+          <Agenda />
+        </div>
       </div>
     );
   }
