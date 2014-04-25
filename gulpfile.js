@@ -52,4 +52,6 @@ gulp.task("build-app", ["webpack:build-dev", "styles"], function () {
   });
 });
 
-gulp.task('default', ['connect', 'build-app', 'watch-app']);
+gulp.task('default', ['connect', 'build-app', 'watch-app'], function () {
+  console.log('listen to connect on 9002');
+});

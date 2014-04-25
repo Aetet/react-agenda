@@ -8,7 +8,6 @@ var Month = React.createClass({
   render: function () {
     return (
       <div>
-        <CreateEvent />
       </div>
     );
   }
