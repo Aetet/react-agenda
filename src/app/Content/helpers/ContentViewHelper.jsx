@@ -3,20 +3,20 @@
 */
 
 var React = require('react');
-var MonthView = require('root/Month/views/MonthView');
+var WeekView = require('root/Week/views/WeekView');
 
 var ContentViewHelper = {
   getContentView: function (events, type) {
     var ContentView;
     switch (type) {
       case 'week':
-        ContentView = this.getMonthView(events);
+        ContentView = this.getWeekView(events);
     }
     return ContentView;
   },
 
-  getMonthView: function (events) {
-    var ContentView = <MonthView />;
+  getWeekView: function (events) {
+    var ContentView = <WeekView events={events} />;
     return ContentView;
   }
 };
