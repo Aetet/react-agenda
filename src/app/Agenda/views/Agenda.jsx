@@ -37,20 +37,22 @@ var Agenda = React.createClass({
         [],
         [],
         []
-      ]
+      ],
+
+      type: 'week'
     };
   },
   render: function () {
 
     var type = this.props.type;
-      return (
-        <div className="span9">
-          <div className="hero-unit">
-            <Toolbar />
-            <Content />
-          </div>
+    return (
+      <div className="span9">
+        <div className="hero-unit">
+          <Toolbar />
+          <Content events={this.state.events}/>
         </div>
-      );
+      </div>
+    );
   }
 });
 module.exports = Agenda;

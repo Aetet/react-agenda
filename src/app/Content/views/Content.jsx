@@ -1,23 +1,17 @@
 /**
 * @jsx React.DOM
 */
-var React = require('react'),
-    Month = require('root/Month/views/Month');
-var Content = React.createClass({
-  render: function () {
-    var content;
-    var type = 'month';
+var React = require('react');
+var helper = require('root/Content/helpers/ContentViewHelper');
 
-    switch(type) {
-      case 'month':
-        content = <Month />;
-        break;
-      default:
-        break;
-    }
+var Content = React.createClass({
+
+  render: function () {
+    console.log('cv', helper);
+    var ContentView = helper.getContentView(this.props.events, this.props.type);
     return (
       <div>
-        {content}
+        {ContentView}
       </div>
     );
   }
