@@ -49,7 +49,7 @@ var Agenda = React.createClass({
       <div className="span9">
         <div className="hero-unit">
           <Toolbar />
-          <Content events={this.state.events}/>
+          <Content events={this.state.events} type={this.state.type}/>
         </div>
       </div>
     );
