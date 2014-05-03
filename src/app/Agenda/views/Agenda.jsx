@@ -38,8 +38,8 @@ var Agenda = React.createClass({
         [],
         []
       ],
-
-      type: 'week'
+      type: 'week',
+      firstDate: '2014-04-12 00:00'
     };
   },
   render: function () {
@@ -49,7 +49,9 @@ var Agenda = React.createClass({
       <div className="span9">
         <div className="hero-unit">
           <Toolbar />
-          <Content events={this.state.events} type={this.state.type}/>
+          <Content events={this.state.events} 
+                   type={this.state.type}
+                   firstDate={this.state.firstDate} />
         </div>
       </div>
     );
