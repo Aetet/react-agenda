@@ -19,27 +19,29 @@ var Agenda = React.createClass({
   //Если неделя последняя запросить еще один месяц в фозне
   getInitialState: function () {
     return {
-      events: [
-        [{
-          date: '2014-04-12 14:35',
-          title: 'Hello, doctor',
-          time: ''
-        }, {
-          date: '2014-04-12 14:35',
-          title: 'Next patient'
-        }, {
-          date: '2014-04-12 14:35',
-          title: 'Another patient'
-        }],
-        [],
-        [],
-        [],
-        [],
-        [],
-        []
-      ],
-      type: 'week',
-      firstDate: '2014-04-12 00:00'
+      week: {
+        startDate: '2014-04-14 00:00',
+        events: [
+          [{
+            date: '2014-04-12 14:35',
+            title: 'Hello, doctor',
+            time: ''
+          }, {
+            date: '2014-04-12 14:35',
+            title: 'Next patient'
+          }, {
+            date: '2014-04-12 14:35',
+            title: 'Another patient'
+          }],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+      },
+      type: 'week'
     };
   },
   render: function () {
@@ -49,9 +51,7 @@ var Agenda = React.createClass({
       <div className="span9">
         <div className="hero-unit">
           <Toolbar />
-          <Content events={this.state.events} 
-                   type={this.state.type}
-                   firstDate={this.state.firstDate} />
+          <Content week={this.state.week} type={this.state.type} />
         </div>
       </div>
     );
