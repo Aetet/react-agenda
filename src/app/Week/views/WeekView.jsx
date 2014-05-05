@@ -2,17 +2,16 @@
 * @jsx React.DOM
 */
 var React = require('react'),
-    WeekViewHelper = require('root/Week/helpers/WeekViewHelper');
+    WeekHead = require('root/Week/views/WeekHead'),
+    WeekBody = require('root/Week/views/WeekBody');
+    //WeekViewHelper = require('root/Week/helpers/WeekViewHelper');
+
 var WeekView = React.createClass({
   render: function () {
-    var head = WeekViewHelper.getHead(this.props.week);
     return (
       <table>
-        <thead>
-          {head}
-        </thead>
-        <tbody>
-        </tbody>
+        <WeekHead week={this.props.week} />
+        <WeekBody week={this.props.week} />
       </table>
     );
   }

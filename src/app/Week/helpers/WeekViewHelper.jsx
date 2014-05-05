@@ -3,21 +3,24 @@
 */
 
 var React = require('react'),
-    moment = require('moment');
-    moment.lang('ru');
+    WeekHeaderView = require('root/Week/views/WeekHeaderView');
 
 var WeekViewHelper = {
   getHead: function (week) {
-    var startDate = week.startDate;
     var head = [];
-    var tmpM = moment(startDate);
+    var startDate = moment(week.startDate).format('YYYY-MM-DD HH:mm');
+    var tmpDate = moment(week.startDate);
     for (var i = 0; i < 7; i++) {
-      var tmp = <th>{tmpM.format('DD.MM.YYYY dd')}</th>;
+      <WeekHeaderView date={tmpDateStr} />
+      var tmp = <th>{tmpM.format('DD.MM.YYYY dddd')}</th>;
       tmpM.add(1, 'day');
       head.push(tmp);
-
     }
-    return (<div>{head}</div>);
+    return (<thead>{head}</thead>);
+  },
+
+  getBody: function (week) {
+    return (<tbody><tr><td>Ojoj</td></tr></tbody>);
   }
 };
 
